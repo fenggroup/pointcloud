@@ -1,0 +1,95 @@
+{
+	"version": "2.0",
+	"name": "lidar-2",
+	"description": "",
+	"points": 131072,
+	"projection": "",
+	"hierarchy": {
+		"firstChunkSize": 616, 
+		"stepSize": 4, 
+		"depth": 17
+	},
+	"offset": [-204.51899999999998, -220.958, -2.9399999999999999],
+	"scale": [2.9949937015771864e-07, 4.1231699287891386e-07, 0.01],
+	"spacing": 3.4587656249999998,
+	"boundingBox": {
+		"min": [-204.51899999999998, -220.958, -2.9399999999999999], 
+		"max": [238.203, 221.76399999999998, 439.78199999999998]
+	},
+	"encoding": "DEFAULT",
+	"attributes": [
+		{
+			"name": "position",
+			"description": "",
+			"size": 12,
+			"numElements": 3,
+			"elementSize": 4,
+			"type": "int32",
+			"min": [-204.51899999999998, -210.47, -2.9399999999999999],
+			"max": [117.06599999999999, 209.61672959999999, 26.940000000000001]
+		},{
+			"name": "intensity",
+			"description": "",
+			"size": 2,
+			"numElements": 1,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "return number",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [1],
+			"max": [1]
+		},{
+			"name": "number of returns",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [1],
+			"max": [1]
+		},{
+			"name": "classification",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "scan angle rank",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "user data",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "point source id",
+			"description": "",
+			"size": 2,
+			"numElements": 1,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0],
+			"max": [0]
+		}
+	]
+}
