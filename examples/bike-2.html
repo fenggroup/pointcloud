@@ -38,10 +38,25 @@
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
+	<script type="importmap">
+	{
+		"imports": {
+		"three": "https://unpkg.com/three@0.150.1/build/three.module.js",
+		"three/addons/": "https://unpkg.com/three@0.150.1/examples/jsm/"
+		}
+	}
+	</script>
+
 	<script type="module">
 
-	import * as THREE from "../libs/three.js/build/three.module.js";
-	
+	// import * as THREE from "../libs/three.js/build/three.module.js";
+
+	import * as THREE from 'three';
+	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+
+
+
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
 		viewer.setEDLEnabled(true);
@@ -74,7 +89,7 @@
 			material.intensityRange = [0, 20000]
 			material.intensityGamma = 0.5
 			
-			viewer.scene.view.position.set(23, -14, 18); // Set initial camera position
+			viewer.scene.view.position.set(23, -18, 14); // Set initial camera position
 			viewer.scene.view.lookAt(new THREE.Vector3(0, 0, 0));
 			// console.log(viewer.scene.cameraP.position)  // Check camera position
 
@@ -84,11 +99,39 @@
 			// // scene.add( mesh );
 			// viewer.scene.scene.add(mesh)
 
-			viewer.scene.addAnnotation([0.35, 0, 0.02], {
-            "title": "bike",
-            // "description": ""
-        	});
+			// viewer.scene.addAnnotation([0.35, 0, 0.02], {
+            // "title": "bike",
+            // // "description": ""
+        	// });
 
+		const loader = new GLTFLoader();
+
+		// The bicycle 3D model was from https://poly.pizza/m/19VoUuA2pcN
+		// Bicycle by Poly by Google [CC-BY] via Poly Pizza
+
+		loader.load( 'bike.glb', function ( gltf ) {
+
+			const bike = gltf.scene
+
+			viewer.scene.scene.add( bike );
+
+			bike.scale.set(0.006, 0.006, 0.006); 
+
+			bike.rotation.set(Math.PI / 2, 0, 0); 
+
+			bike.position.set(0, 0, -0.8); 
+
+			bike.traverse( ( object ) => {
+
+				if ( object.isMesh ) object.material = new THREE.MeshBasicMaterial({ color: 0xC0C0C0 });
+
+			} );
+
+		}, undefined, function ( error ) {
+
+			console.error( 'An error happened' );
+
+		} );
 
 		});
 		
