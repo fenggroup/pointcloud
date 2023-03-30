@@ -99,39 +99,10 @@
 			// // scene.add( mesh );
 			// viewer.scene.scene.add(mesh)
 
-			// viewer.scene.addAnnotation([0.35, 0, 0.02], {
-            // "title": "bike",
-            // // "description": ""
-        	// });
-
-		const loader = new GLTFLoader();
-
-		// The bicycle 3D model was from https://poly.pizza/m/19VoUuA2pcN
-		// Bicycle by Poly by Google [CC-BY] via Poly Pizza
-
-		loader.load( 'bike.glb', function ( gltf ) {
-
-			const bike = gltf.scene
-
-			viewer.scene.scene.add( bike );
-
-			bike.scale.set(0.006, 0.006, 0.006); 
-
-			bike.rotation.set(Math.PI / 2, 0, 0); 
-
-			bike.position.set(0, 0, -0.8); 
-
-			bike.traverse( ( object ) => {
-
-				if ( object.isMesh ) object.material = new THREE.MeshBasicMaterial({ color: 0xC0C0C0 });
-
-			} );
-
-		}, undefined, function ( error ) {
-
-			console.error( 'An error happened' );
-
-		} );
+			viewer.scene.addAnnotation([0.35, 0, 0.02], {
+            "title": "bike",
+            // "description": ""
+        	});
 
 		});
 		
