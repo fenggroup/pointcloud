@@ -38,25 +38,10 @@
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
-	<script type="importmap">
-	{
-		"imports": {
-		"three": "https://unpkg.com/three@0.150.1/build/three.module.js",
-		"three/addons/": "https://unpkg.com/three@0.150.1/examples/jsm/"
-		}
-	}
-	</script>
-
 	<script type="module">
 
-	// import * as THREE from "../libs/three.js/build/three.module.js";
-
-	import * as THREE from 'three';
-	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
-
-
-
+	import * as THREE from "../libs/three.js/build/three.module.js";
+	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
 		viewer.setEDLEnabled(true);
@@ -85,11 +70,9 @@
 			viewer.scene.addPointCloud(pointcloud);
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.FIXED;
-			material.activeAttributeName = "intensity gradient"; // ["intensity", "elevation", "height", etc.]
-			material.intensityRange = [0, 20000]
-			material.intensityGamma = 0.5
+			material.activeAttributeName = "elevation"; // ["intensity", "elevation", "height", etc.]
 			
-			viewer.scene.view.position.set(23, -18, 14); // Set initial camera position
+			viewer.scene.view.position.set(23, -14, 18); // Set initial camera position
 			viewer.scene.view.lookAt(new THREE.Vector3(0, 0, 0));
 			// console.log(viewer.scene.cameraP.position)  // Check camera position
 
@@ -103,6 +86,7 @@
             "title": "bike",
             // "description": ""
         	});
+
 
 		});
 		

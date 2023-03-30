@@ -1,6 +1,6 @@
 {
 	"version": "2.0",
-	"name": "lidar-bike-2",
+	"name": "lidar-2",
 	"description": "",
 	"points": 131072,
 	"projection": "",
@@ -34,8 +34,8 @@
 			"numElements": 1,
 			"elementSize": 2,
 			"type": "uint16",
-			"min": [1],
-			"max": [5725]
+			"min": [0],
+			"max": [0]
 		},{
 			"name": "return number",
 			"description": "",
