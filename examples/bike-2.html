@@ -37,21 +37,12 @@
 		<div id="potree_render_area" style="background-image: url('../build/potree/resources/images/background.jpg');"></div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
-
-	<script type="importmap">
-	{
-		"imports": {
-		"three": "https://unpkg.com/three@0.150.1/build/three.module.js",
-		"three/addons/": "https://unpkg.com/three@0.150.1/examples/jsm/"
-		}
-	}
-	</script>
 	
 	<script type="module">
 
 	import * as THREE from "../libs/three.js/build/three.module.js";
 
-	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+	import { GLTFLoader } from '../libs/three.js/loaders/GLTFLoader.js';
 
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
