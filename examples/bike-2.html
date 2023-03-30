@@ -70,9 +70,11 @@
 			viewer.scene.addPointCloud(pointcloud);
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.FIXED;
-			material.activeAttributeName = "elevation"; // ["intensity", "elevation", "height", etc.]
+			material.activeAttributeName = "intensity gradient"; // ["intensity", "elevation", "height", etc.]
+			material.intensityRange = [0, 20000]
+			material.intensityGamma = 0.5
 			
-			viewer.scene.view.position.set(23, -14, 18); // Set initial camera position
+			viewer.scene.view.position.set(23, -18, 14); // Set initial camera position
 			viewer.scene.view.lookAt(new THREE.Vector3(0, 0, 0));
 			// console.log(viewer.scene.cameraP.position)  // Check camera position
 
